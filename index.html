@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Emily Thibodeau Fitness · Desert / Canyon</title>
+<meta name="description" content="Certified personal trainer and recovery specialist. Move better, hurt less, get back to what you love. In person in Palm Springs and online worldwide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..800&family=Lato:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base-tokens.css">
+<link rel="stylesheet" href="theme-desert.css">
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; }
+  h1, h2, h3, h4 { font-family: 'Playfair Display', serif !important; font-variation-settings: normal !important; }
+  body, p, .btn, .chip, input, textarea, select, label, .eyebrow { font-family: 'Lato', sans-serif !important; }
+</style>
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<header id="nav" style="position:sticky; top:0; z-index:50; background:transparent; border-bottom:1px solid transparent; transition: background .32s var(--ease-out), border-color .32s var(--ease-out);">
+  <div class="container" style="display:flex; align-items:center; justify-content:space-between; height:72px;">
+    <a href="#top" style="text-decoration:none; display:flex; align-items:center; gap:10px;">
+      <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+        <circle cx="13" cy="13" r="6" fill="var(--coral-500)"/>
+        <line x1="22.5" y1="13" x2="25" y2="13" stroke="var(--coral-500)" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="21.23" y1="17.75" x2="23.39" y2="19" stroke="var(--coral-500)" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="17.75" y1="21.23" x2="19" y2="23.39" stroke="var(--coral-500)" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="13" y1="22.5" x2="13" y2="25" stroke="var(--coral-500)" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="8.25" y1="21.23" x2="7" y2="23.39" stroke="var(--coral-500)" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="4.77" y1="17.75" x2="2.61" y2="19" stroke="var(--coral-500)" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="3.5" y1="13" x2="1" y2="13" stroke="var(--coral-500)" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="4.77" y1="8.25" x2="2.61" y2="7" stroke="var(--coral-500)" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="8.25" y1="4.77" x2="7" y2="2.61" stroke="var(--coral-500)" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="13" y1="3.5" x2="13" y2="1" stroke="var(--coral-500)" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="17.75" y1="4.77" x2="19" y2="2.61" stroke="var(--coral-500)" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="21.23" y1="8.25" x2="23.39" y2="7" stroke="var(--coral-500)" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+      <div style="display:flex; align-items:baseline; gap:6px;">
+        <span style="font-family:var(--font-display); font-weight:600; font-size:22px; color:var(--ink-900); letter-spacing:-0.02em;">Emily</span>
+        <span style="font-family:var(--font-display); font-weight:500; font-style:italic; font-size:22px; color:var(--plum-600); letter-spacing:-0.01em;">Thibodeau</span>
+      </div>
+    </a>
+
+    <nav class="em-nav-desktop" style="display:flex; gap:32px; align-items:center;">
+      <a href="#services" style="color:var(--ink-700); font-size:14px; font-weight:500; text-decoration:none; letter-spacing:0.02em;">Services</a>
+      <a href="#process" style="color:var(--ink-700); font-size:14px; font-weight:500; text-decoration:none; letter-spacing:0.02em;">How we work</a>
+      <a href="#about" style="color:var(--ink-700); font-size:14px; font-weight:500; text-decoration:none; letter-spacing:0.02em;">About</a>
+      <a href="#testimonials" style="color:var(--ink-700); font-size:14px; font-weight:500; text-decoration:none; letter-spacing:0.02em;">Stories</a>
+      <a href="#contact" style="color:var(--ink-700); font-size:14px; font-weight:500; text-decoration:none; letter-spacing:0.02em;">Contact</a>
+      <a class="btn btn-primary" href="#contact" style="font-size:14px; padding:12px 22px; letter-spacing:0.04em;">Book a call</a>
+    </nav>
+
+    <button type="button" class="em-nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer">
+      <svg id="nav-icon-open" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg id="nav-icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none;"><path d="M6 6l12 12M6 18L18 6"/></svg>
+    </button>
+  </div>
+
+  <div id="nav-drawer" class="em-nav-drawer">
+    <nav>
+      <a href="#services" data-close>Services</a>
+      <a href="#process" data-close>How we work</a>
+      <a href="#about" data-close>About</a>
+      <a href="#testimonials" data-close>Stories</a>
+      <a href="#contact" data-close>Contact</a>
+      <a class="btn btn-primary" href="#contact" data-close style="font-size:14px; letter-spacing:0.04em;">Book a call</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ========== HERO ========== -->
+<section id="top" class="em-hero" style="position:relative; padding:40px 0 140px; background:var(--gradient-morning); overflow:hidden;">
+  <div aria-hidden="true" class="desert-sun" style="top:-60px; right:8%; width:420px; height:420px;"></div>
+
+  <svg aria-hidden="true" viewBox="0 0 1440 220" preserveAspectRatio="none" style="position:absolute; bottom:80px; left:0; right:0; width:100%; height:220px; opacity:0.22; pointer-events:none;">
+    <path d="M0,220 L0,140 L90,120 L180,135 L260,90 L340,110 L420,70 L520,95 L600,60 L700,85 L800,50 L900,78 L990,40 L1080,72 L1180,55 L1280,85 L1360,60 L1440,90 L1440,220 Z" fill="var(--plum-700)"/>
+  </svg>
+  <svg aria-hidden="true" viewBox="0 0 1440 160" preserveAspectRatio="none" style="position:absolute; bottom:40px; left:0; right:0; width:100%; height:160px; opacity:0.38; pointer-events:none;">
+    <path d="M0,160 L0,120 L120,100 L220,115 L320,80 L420,100 L540,65 L640,88 L760,55 L860,80 L980,48 L1080,72 L1200,55 L1320,80 L1440,60 L1440,160 Z" fill="var(--coral-700)"/>
+  </svg>
+
+  <div class="container" style="position:relative;">
+    <div class="em-hero-grid">
+      <div>
+        <span class="eyebrow">Certified personal training · in person + online</span>
+        <h1 style="margin-top:10px; font-size:clamp(54px, 6.6vw, 96px); line-height:1.02;">
+          Move better.<br>
+          <em style="font-style:italic; color:var(--plum-600); font-weight:500;">Hurt less.</em><br>
+          Get back to what you love.
+        </h1>
+        <p class="em-hero-sub" style="margin-top:28px; font-size:18px; line-height:1.65; color:var(--ink-700); max-width:540px;">I'm Emily — a certified trainer for every body. Whether you're a weekend athlete chasing a PR, a parent squeezing workouts between school runs, or rebuilding after an injury, your plan is built around your body, your history, and the thing you're trying to get back to.</p>
+        <div style="display:flex; gap:12px; margin-top:36px; flex-wrap:wrap;">
+          <a class="btn btn-primary" href="#contact">Book a free 20-min call</a>
+          <a class="btn btn-secondary" href="https://wa.me/15551234567">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22a10 10 0 1 0-8.7-5.1L2 22l5.2-1.4A10 10 0 0 0 12 22Z"/>
+              <path d="M9 9c.3-.5.7-.5 1-.5s.5.1.8.6l.9 1.9c.1.3.1.4 0 .7l-.4.5a.4.4 0 0 0-.1.5 6 6 0 0 0 2.9 2.9.4.4 0 0 0 .5-.1l.5-.4c.3-.1.4-.1.7 0l1.9.9c.5.3.5.5.5.8 0 .3-.1.7-.5 1-.4.4-1.2.7-2.3.7-2.5 0-5-1.5-6.2-2.7s-2.7-3.7-2.7-6.2c0-1.1.3-1.9.7-2.3Z"/>
+            </svg>
+            Message me on WhatsApp
+          </a>
+        </div>
+        <div class="em-hero-stats">
+          <div>
+            <div style="color:var(--plum-600); font-size:26px; font-family:var(--font-display); font-weight:600; line-height:1; margin-bottom:6px; letter-spacing:-0.01em;">10+ yrs</div>
+            <div style="color:var(--ink-500); font-size:13px; letter-spacing:0.02em;">specializing in recovery</div>
+          </div>
+          <div style="border-left:1px solid var(--ink-200); padding-left:24px;">
+            <div style="color:var(--plum-600); font-size:26px; font-family:var(--font-display); font-weight:600; line-height:1; margin-bottom:6px; letter-spacing:-0.01em;">200+</div>
+            <div style="color:var(--ink-500); font-size:13px; letter-spacing:0.02em;">clients coached</div>
+          </div>
+          <div style="border-left:1px solid var(--ink-200); padding-left:24px;">
+            <div style="color:var(--plum-600); font-size:26px; font-family:var(--font-display); font-weight:600; line-height:1; margin-bottom:6px; letter-spacing:-0.01em;">5 certs</div>
+            <div style="color:var(--ink-500); font-size:13px; letter-spacing:0.02em;">industry-recognized</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="em-hero-photo" style="position:relative;">
+        <div style="width:100%; aspect-ratio:4/5; position:relative; border-top-left-radius:50% 30%; border-top-right-radius:50% 30%; border-bottom-left-radius:var(--r-lg); border-bottom-right-radius:var(--r-lg); overflow:hidden; box-shadow:var(--shadow-3); background:var(--coral-700);">
+          <img src="assets/photos/emily-foam-roll-bench.jpg" alt="Emily coaching in her studio" class="photo-canyon" style="display:block; width:100%; height:100%; object-fit:cover;">
+          <div aria-hidden="true" style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(198,97,63,0.08) 0%, rgba(92,46,33,0.35) 100%);"></div>
+        </div>
+
+        <svg aria-hidden="true" class="em-hero-dots" style="position:absolute; top:-22px; left:-22px; width:80px; height:80px;" viewBox="0 0 80 80">
+          <circle cx="6" cy="6" r="2.2" fill="var(--plum-600)"/><circle cx="28" cy="6" r="2.2" fill="var(--plum-600)"/><circle cx="50" cy="6" r="2.2" fill="var(--plum-600)"/><circle cx="72" cy="6" r="2.2" fill="var(--plum-600)"/>
+          <circle cx="6" cy="28" r="2.2" fill="var(--plum-600)"/><circle cx="28" cy="28" r="2.2" fill="var(--plum-600)"/><circle cx="50" cy="28" r="2.2" fill="var(--plum-600)"/><circle cx="72" cy="28" r="2.2" fill="var(--plum-600)"/>
+          <circle cx="6" cy="50" r="2.2" fill="var(--plum-600)"/><circle cx="28" cy="50" r="2.2" fill="var(--plum-600)"/><circle cx="50" cy="50" r="2.2" fill="var(--plum-600)"/><circle cx="72" cy="50" r="2.2" fill="var(--plum-600)"/>
+          <circle cx="6" cy="72" r="2.2" fill="var(--plum-600)"/><circle cx="28" cy="72" r="2.2" fill="var(--plum-600)"/><circle cx="50" cy="72" r="2.2" fill="var(--plum-600)"/><circle cx="72" cy="72" r="2.2" fill="var(--plum-600)"/>
+        </svg>
+
+        <div class="em-hero-quote" style="position:absolute; bottom:-24px; left:-28px; background:var(--butter-300); padding:16px 20px; border-radius:var(--r-md); box-shadow:var(--shadow-2); font-family:var(--font-display); font-weight:500; font-style:italic; color:var(--plum-700); font-size:17px; max-width:240px; line-height:1.35; border:1px solid rgba(92,46,33,0.12);">
+          "She moves at exactly my pace."
+          <div style="font-family:var(--font-body); font-style:normal; font-size:12px; color:var(--plum-700); margin-top:6px; font-weight:600; letter-spacing:0.04em;">— David, 61</div>
+        </div>
+
+        <div class="em-hero-sticker" style="position:absolute; top:24px; right:-16px; background:var(--cream-50); padding:10px 14px; border-radius:var(--r-pill); box-shadow:var(--shadow-2); font-size:12px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--moss-700); display:flex; align-items:center; gap:8px;">
+          <span style="width:8px; height:8px; border-radius:999px; background:var(--moss-500);"></span>
+          Now booking fall cohort
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SERVICES ========== -->
+<section id="services" class="em-section-tall" style="padding:120px 0 88px; background:var(--cream-50); position:relative;">
+  <div class="container">
+    <div style="max-width:760px; margin-bottom:64px; display:flex; align-items:flex-end; justify-content:space-between; gap:40px; flex-wrap:wrap;">
+      <div>
+        <span class="eyebrow">Services · how we can work together</span>
+        <h2 style="margin-top:10px; font-size:clamp(38px, 4.4vw, 60px);">Three ways in.<br><em style="color:var(--plum-600); font-style:italic; font-weight:500;">One plan built for you.</em></h2>
+      </div>
+      <div style="font-size:14px; color:var(--ink-500); max-width:240px; line-height:1.55; padding-bottom:8px;">Pick a starting point. We adjust as your body — and your goals — change.</div>
+    </div>
+
+    <div class="em-svc-grid">
+      <article class="em-svc-card" style="background:var(--bg-raised); border-radius:var(--r-lg); box-shadow:var(--shadow-2); overflow:hidden; display:flex; flex-direction:column; border:1px solid var(--ink-100); transition: transform .32s var(--ease-out), box-shadow .32s var(--ease-out);">
+        <div class="em-svc-photo" style="height:240px; overflow:hidden; position:relative;">
+          <img src="assets/photos/emily-foam-roll-bench.jpg" alt="" class="photo-canyon" style="width:100%; height:100%; object-fit:cover;">
+          <div aria-hidden="true" style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(198,97,63,0) 40%, rgba(67,30,22,0.35) 100%);"></div>
+          <span style="position:absolute; top:14px; left:14px; background:var(--cream-50); padding:6px 12px; border-radius:var(--r-pill); font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--plum-700); box-shadow:var(--shadow-1);">Most booked</span>
+          <div style="position:absolute; top:14px; right:14px; font-family:var(--font-display); font-style:italic; font-size:36px; font-weight:500; color:rgba(251,245,234,0.85); letter-spacing:-0.02em; line-height:1;">01</div>
+        </div>
+        <div style="padding:28px 28px 32px; display:flex; flex-direction:column; flex:1;">
+          <span style="font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:var(--coral-600); font-weight:600; margin-bottom:10px;">In person · 60 min</span>
+          <h3 style="margin-bottom:14px; font-size:26px;">1:1 in the studio</h3>
+          <p style="font-size:16px; color:var(--ink-700); flex:1; line-height:1.6; margin:0;">An hour with me in my fully-equipped private studio. Hands-on cueing, manual recovery work, and a program that changes as you do. Best for clients rebuilding after injury or surgery.</p>
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-top:24px; padding-top:20px; border-top:1px solid var(--ink-100);">
+            <a href="#contact" style="font-family:var(--font-body); font-size:14px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--plum-600); text-decoration:none; display:inline-flex; align-items:center; gap:8px;">
+              Book session <span style="font-family:var(--font-display); font-style:italic; font-weight:400; text-transform:none; letter-spacing:0; font-size:18px;">→</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="em-svc-card" style="background:var(--bg-raised); border-radius:var(--r-lg); box-shadow:var(--shadow-2); overflow:hidden; display:flex; flex-direction:column; border:1px solid var(--ink-100); transition: transform .32s var(--ease-out), box-shadow .32s var(--ease-out);">
+        <div class="em-svc-photo" style="height:240px; overflow:hidden; position:relative;">
+          <img src="assets/photos/emily-park-stretch.jpg" alt="" class="photo-canyon" style="width:100%; height:100%; object-fit:cover;">
+          <div aria-hidden="true" style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(198,97,63,0) 40%, rgba(67,30,22,0.35) 100%);"></div>
+          <span style="position:absolute; top:14px; left:14px; background:var(--cream-50); padding:6px 12px; border-radius:var(--r-pill); font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--plum-700); box-shadow:var(--shadow-1);">Remote</span>
+          <div style="position:absolute; top:14px; right:14px; font-family:var(--font-display); font-style:italic; font-size:36px; font-weight:500; color:rgba(251,245,234,0.85); letter-spacing:-0.02em; line-height:1;">02</div>
+        </div>
+        <div style="padding:28px 28px 32px; display:flex; flex-direction:column; flex:1;">
+          <span style="font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:var(--coral-600); font-weight:600; margin-bottom:10px;">Online · 45 min live</span>
+          <h3 style="margin-bottom:14px; font-size:26px;">Online coaching</h3>
+          <p style="font-size:16px; color:var(--ink-700); flex:1; line-height:1.6; margin:0;">We meet on video. I write your program, watch you move, adjust on the fly, and check in between sessions. Great if you're not local, traveling a lot, or prefer training at home.</p>
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-top:24px; padding-top:20px; border-top:1px solid var(--ink-100);">
+            <a href="#contact" style="font-family:var(--font-body); font-size:14px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--plum-600); text-decoration:none; display:inline-flex; align-items:center; gap:8px;">
+              Book session <span style="font-family:var(--font-display); font-style:italic; font-weight:400; text-transform:none; letter-spacing:0; font-size:18px;">→</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="em-svc-card" style="background:var(--bg-raised); border-radius:var(--r-lg); box-shadow:var(--shadow-2); overflow:hidden; display:flex; flex-direction:column; border:1px solid var(--ink-100); transition: transform .32s var(--ease-out), box-shadow .32s var(--ease-out);">
+        <div class="em-svc-photo" style="height:240px; overflow:hidden; position:relative;">
+          <img src="assets/photos/emily-massage-gun-back.jpg" alt="" class="photo-canyon" style="width:100%; height:100%; object-fit:cover;">
+          <div aria-hidden="true" style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(198,97,63,0) 40%, rgba(67,30,22,0.35) 100%);"></div>
+          <span style="position:absolute; top:14px; left:14px; background:var(--cream-50); padding:6px 12px; border-radius:var(--r-pill); font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--plum-700); box-shadow:var(--shadow-1);">Recovery</span>
+          <div style="position:absolute; top:14px; right:14px; font-family:var(--font-display); font-style:italic; font-size:36px; font-weight:500; color:rgba(251,245,234,0.85); letter-spacing:-0.02em; line-height:1;">03</div>
+        </div>
+        <div style="padding:28px 28px 32px; display:flex; flex-direction:column; flex:1;">
+          <span style="font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:var(--coral-600); font-weight:600; margin-bottom:10px;">In person · 45 min</span>
+          <h3 style="margin-bottom:14px; font-size:26px;">Manual recovery</h3>
+          <p style="font-size:16px; color:var(--ink-700); flex:1; line-height:1.6; margin:0;">Massage-gun work, assisted foam rolling, guided mobility. A standalone session or a natural add-on to 1:1 training. Book it after a hard week or before a big travel day.</p>
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-top:24px; padding-top:20px; border-top:1px solid var(--ink-100);">
+            <a href="#contact" style="font-family:var(--font-body); font-size:14px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--plum-600); text-decoration:none; display:inline-flex; align-items:center; gap:8px;">
+              Book session <span style="font-family:var(--font-display); font-style:italic; font-weight:400; text-transform:none; letter-spacing:0; font-size:18px;">→</span>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PROCESS ========== -->
+<section id="process" class="em-section-tall" style="padding:120px 0; background:var(--cream-100); position:relative;">
+  <div class="container" style="position:relative;">
+    <div style="max-width:680px; margin:0 auto 88px; text-align:center;">
+      <span class="eyebrow">How we work · three steps</span>
+      <h2 style="margin-top:10px; font-size:clamp(38px, 4.4vw, 60px);">No templates. No rush.<br><em style="color:var(--plum-600); font-style:italic; font-weight:500;">Just a plan that fits your body.</em></h2>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:96px; position:relative;">
+      <div aria-hidden="true" class="em-process-connector" style="position:absolute; left:50%; top:40px; bottom:40px; width:1px; background-image:repeating-linear-gradient(to bottom, var(--coral-400) 0 6px, transparent 6px 14px); transform:translateX(-0.5px); opacity:0.45; pointer-events:none;"></div>
+
+      <div class="em-process-step" style="direction:ltr;">
+        <div aria-hidden="true" class="em-process-num-pill" style="position:absolute; left:50%; top:40px; transform:translateX(-50%); width:56px; height:56px; border-radius:999px; background:var(--coral-500); color:var(--cream-50); display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-style:italic; font-weight:600; font-size:22px; z-index:2; box-shadow:0 0 0 6px var(--cream-100);">01</div>
+        <div class="em-process-photo" style="position:relative;">
+          <div style="border-radius:var(--r-lg); overflow:hidden; box-shadow:var(--shadow-3); border:6px solid var(--cream-50);">
+            <img src="assets/photos/emily-massage-gun-foot.jpg" alt="" class="photo-canyon" style="width:100%; height:400px; object-fit:cover; display:block;">
+          </div>
+        </div>
+        <div style="padding-left:24px;">
+          <div style="font-size:13px; letter-spacing:0.22em; text-transform:uppercase; color:var(--coral-600); font-weight:600; margin-bottom:16px;">Step 01</div>
+          <h3 class="em-process-title" style="font-size:40px; margin-bottom:20px; line-height:1.08;"><em style="font-style:italic; font-weight:500; color:var(--plum-700);">We talk</em></h3>
+          <p style="font-size:18px; color:var(--ink-700); line-height:1.65; max-width:480px; margin:0;">A free 20-minute call. You tell me what's going on — the injury, the pain, the thing you miss doing. I listen, ask a lot of questions, and tell you honestly whether I'm the right person to help.</p>
+        </div>
+      </div>
+
+      <div class="em-process-step" style="direction:rtl;">
+        <div aria-hidden="true" class="em-process-num-pill" style="direction:ltr; position:absolute; left:50%; top:40px; transform:translateX(-50%); width:56px; height:56px; border-radius:999px; background:var(--coral-500); color:var(--cream-50); display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-style:italic; font-weight:600; font-size:22px; z-index:2; box-shadow:0 0 0 6px var(--cream-100);">02</div>
+        <div class="em-process-photo" style="direction:ltr; position:relative;">
+          <div style="border-radius:var(--r-lg); overflow:hidden; box-shadow:var(--shadow-3); border:6px solid var(--cream-50);">
+            <img src="assets/photos/hamstring-assist.jpg" alt="" class="photo-canyon" style="width:100%; height:400px; object-fit:cover; display:block;">
+          </div>
+        </div>
+        <div style="direction:ltr; padding-right:24px;">
+          <div style="font-size:13px; letter-spacing:0.22em; text-transform:uppercase; color:var(--coral-600); font-weight:600; margin-bottom:16px;">Step 02</div>
+          <h3 class="em-process-title" style="font-size:40px; margin-bottom:20px; line-height:1.08;"><em style="font-style:italic; font-weight:500; color:var(--plum-700);">We build your plan</em></h3>
+          <p style="font-size:18px; color:var(--ink-700); line-height:1.65; max-width:480px; margin:0;">I write a program specifically for your body, your history, and your goal. Not a template. If you've been told to 'just be careful' or 'stop doing the thing you love', we start there — and we work back toward it.</p>
+        </div>
+      </div>
+
+      <div class="em-process-step" style="direction:ltr;">
+        <div aria-hidden="true" class="em-process-num-pill" style="position:absolute; left:50%; top:40px; transform:translateX(-50%); width:56px; height:56px; border-radius:999px; background:var(--coral-500); color:var(--cream-50); display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-style:italic; font-weight:600; font-size:22px; z-index:2; box-shadow:0 0 0 6px var(--cream-100);">03</div>
+        <div class="em-process-photo" style="position:relative;">
+          <div style="border-radius:var(--r-lg); overflow:hidden; box-shadow:var(--shadow-3); border:6px solid var(--cream-50);">
+            <img src="assets/photos/emily-foam-roll-bench.jpg" alt="" class="photo-canyon" style="width:100%; height:400px; object-fit:cover; display:block;">
+          </div>
+        </div>
+        <div style="padding-left:24px;">
+          <div style="font-size:13px; letter-spacing:0.22em; text-transform:uppercase; color:var(--coral-600); font-weight:600; margin-bottom:16px;">Step 03</div>
+          <h3 class="em-process-title" style="font-size:40px; margin-bottom:20px; line-height:1.08;"><em style="font-style:italic; font-weight:500; color:var(--plum-700);">We get to work</em></h3>
+          <p style="font-size:18px; color:var(--ink-700); line-height:1.65; max-width:480px; margin:0;">We train together, in the studio or online. I adjust the plan week by week based on what your body is telling us. My job is to make you more capable than you were — and to get out of your way once you are.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== VIDEO BLOCK ========== -->
+<section class="em-section" style="padding:80px 0; background:var(--cream-50);">
+  <div class="container">
+    <div style="text-align:center; margin:0 auto 40px; max-width:640px;">
+      <span class="eyebrow">Watch · ninety seconds</span>
+      <h3 style="margin-top:8px; font-size:28px;">A peek inside the <em style="font-style:italic; color:var(--plum-600); font-weight:500;">studio.</em></h3>
+    </div>
+    <div id="video-card" style="position:relative; border-radius:var(--r-lg); overflow:hidden; box-shadow:var(--shadow-3); aspect-ratio:16/9; background:var(--plum-800); border:8px solid var(--cream-50);">
+      <img id="video-poster" src="assets/photos/emily-massage-gun-back.jpg" alt="" class="photo-canyon" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter: brightness(0.65) saturate(0.9) sepia(0.12); transition: filter .32s var(--ease-out);">
+      <div id="video-overlay" aria-hidden="true" style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(198,97,63,0.15) 0%, rgba(67,30,22,0.55) 100%);"></div>
+      <div id="video-cta" style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:24px; color:var(--cream-50);">
+        <button id="video-play" class="em-video-btn" aria-label="Play video" style="width:104px; height:104px; border-radius:50%; background:var(--coral-500); border:3px solid var(--cream-50); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 16px 48px rgba(67,30,22,0.5); transition: transform .18s var(--ease-out), background .18s var(--ease-out);">
+          <svg viewBox="0 0 24 24" width="32" height="32" fill="var(--cream-50)" style="margin-left:4px;" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.87l11-6.5a1 1 0 0 0 0-1.74l-11-6.5A1 1 0 0 0 8 5.5Z"/></svg>
+        </button>
+        <div style="text-align:center; max-width:520px;">
+          <div class="em-video-title" style="font-family:var(--font-display); font-style:italic; font-size:32px; font-weight:500; letter-spacing:-0.02em;">See what a session looks like</div>
+        </div>
+      </div>
+      <div id="video-placeholder" style="display:none; position:absolute; inset:0; align-items:center; justify-content:center; color:var(--cream-50); background:var(--plum-800); font-size:15px;">
+        <div style="text-align:center;">
+          <div>Video playback placeholder</div>
+          <div style="opacity:0.6; margin-top:8px; font-size:13px;">Re-attach EPowered-Fitness-HD.mp4 and point this &lt;video&gt; at it.</div>
+          <button id="video-close" class="btn btn-ghost" style="color:var(--cream-50); margin-top:16px;">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section id="about" class="em-section-tall" style="padding:120px 0; background:var(--cream-50); position:relative; overflow:hidden;">
+  <div aria-hidden="true" style="position:absolute; top:60px; right:-120px; width:360px; height:360px; border-radius:999px; border:1px solid var(--coral-300); opacity:0.4;"></div>
+  <div aria-hidden="true" style="position:absolute; top:120px; right:-60px; width:240px; height:240px; border-radius:999px; border:1px solid var(--coral-300); opacity:0.5;"></div>
+
+  <div class="container" style="position:relative;">
+    <div class="em-about-grid">
+      <div class="em-about-photo" style="position:relative;">
+        <div aria-hidden="true" style="position:absolute; inset:-28px -28px 28px 28px; background:var(--butter-300); border-radius:var(--r-lg); border:1px solid var(--coral-300);"></div>
+        <div style="position:relative; overflow:hidden; border-top-left-radius:50% 30%; border-top-right-radius:50% 30%; border-bottom-left-radius:var(--r-lg); border-bottom-right-radius:var(--r-lg); box-shadow:var(--shadow-3);">
+          <img src="assets/photos/emily-box-seated.jpg" alt="Emily Thibodeau" class="photo-canyon" style="display:block; width:100%; height:600px; object-fit:cover;">
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow">About · the person behind the plan</span>
+        <h2 style="margin-top:10px; font-size:clamp(40px, 4.8vw, 68px);">Hi, I'm <em style="color:var(--plum-600); font-style:italic; font-weight:500;">Emily.</em></h2>
+        <p style="margin-top:24px; font-size:19px; line-height:1.65; color:var(--ink-700); max-width:560px;">I've spent over a decade coaching people of every age and ability — athletes, busy parents, folks rebuilding after surgery, and anyone who wants to get stronger without getting hurt. My training is precise, adaptable, and stubbornly patient. The goal is always the same: make you more capable in your own life.</p>
+
+        <div style="margin-top:36px;">
+          <div style="font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:var(--ink-500); font-weight:600; margin-bottom:16px;">Certifications</div>
+          <div style="display:flex; flex-wrap:wrap; gap:10px;">
+            <span style="padding:8px 14px; font-size:13px; font-weight:600; border-radius:var(--r-pill); background:transparent; color:var(--plum-700); border:1px solid var(--plum-600); letter-spacing:0.04em;">NASM-CPT</span>
+            <span style="padding:8px 14px; font-size:13px; font-weight:600; border-radius:var(--r-pill); background:transparent; color:var(--plum-700); border:1px solid var(--plum-600); letter-spacing:0.04em;">Corrective Exercise Specialist</span>
+            <span style="padding:8px 14px; font-size:13px; font-weight:600; border-radius:var(--r-pill); background:transparent; color:var(--plum-700); border:1px solid var(--plum-600); letter-spacing:0.04em;">Functional Aging Specialist</span>
+            <span style="padding:8px 14px; font-size:13px; font-weight:600; border-radius:var(--r-pill); background:transparent; color:var(--plum-700); border:1px solid var(--plum-600); letter-spacing:0.04em;">Senior Fitness Specialist</span>
+            <span style="padding:8px 14px; font-size:13px; font-weight:600; border-radius:var(--r-pill); background:transparent; color:var(--plum-700); border:1px solid var(--plum-600); letter-spacing:0.04em;">Pain-Free Performance Certified</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section id="testimonials" class="em-section-tall" style="padding:120px 0; background:var(--gradient-dusk); color:var(--cream-50); position:relative; overflow:hidden;">
+  <div aria-hidden="true" style="position:absolute; top:-160px; left:50%; transform:translateX(-50%); width:600px; height:600px; border-radius:999px; background:radial-gradient(circle, rgba(255,200,140,0.35) 0%, rgba(255,200,140,0) 65%); pointer-events:none;"></div>
+
+  <svg aria-hidden="true" viewBox="0 0 1440 120" preserveAspectRatio="none" style="position:absolute; bottom:0; left:0; right:0; width:100%; height:120px; pointer-events:none;">
+    <path d="M0,120 L0,80 L80,60 L160,78 L240,40 L320,64 L420,28 L520,56 L620,20 L720,50 L820,14 L920,46 L1020,24 L1120,52 L1220,28 L1320,56 L1440,34 L1440,120 Z" fill="var(--plum-800)" opacity="0.5"/>
+  </svg>
+
+  <div class="container" style="position:relative;">
+    <div class="em-test-grid">
+      <div>
+        <span style="color:var(--butter-300); font-size:12px; letter-spacing:0.22em; text-transform:uppercase; font-weight:600;">Stories · from the studio</span>
+        <h2 style="margin-top:12px; color:var(--cream-50); font-size:clamp(40px, 4.6vw, 64px); line-height:1.05;">Change comes <em style="color:var(--butter-300); font-style:italic; font-weight:500;">quietly.</em></h2>
+        <p style="margin-top:20px; color:rgba(251,245,234,0.78); font-size:16px; max-width:320px; line-height:1.6;">Real clients, real bodies, real progress — measured in months, not weeks.</p>
+      </div>
+
+      <div class="em-test-card" style="background:var(--cream-50); color:var(--plum-700); border-radius:var(--r-lg); padding:52px 56px; box-shadow:var(--shadow-3); position:relative; border:1px solid rgba(92,46,33,0.15);">
+        <div aria-hidden="true" class="em-test-qmark" style="position:absolute; top:24px; right:32px; font-family:var(--font-display); font-style:italic; font-size:180px; font-weight:500; color:var(--butter-300); line-height:0.6; pointer-events:none; opacity:0.55;">"</div>
+        <blockquote id="t-quote" style="font-family:var(--font-display); font-style:italic; font-weight:500; font-size:30px; line-height:1.32; color:var(--plum-700); margin:0; letter-spacing:-0.01em; position:relative;">Emily is the first trainer who actually listened to me about my knee. Six months in and I'm back to hiking with my grandkids.</blockquote>
+        <div style="display:flex; align-items:center; gap:16px; margin-top:32px;">
+          <div id="t-initial" style="width:52px; height:52px; border-radius:50%; background:var(--coral-500); color:var(--cream-50); display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-weight:600; font-size:22px;">M</div>
+          <div>
+            <div id="t-name" style="font-family:var(--font-body); font-weight:700; font-size:16px; color:var(--ink-900); letter-spacing:0.02em;">Marianne</div>
+            <div id="t-context" style="font-family:var(--font-body); font-size:13px; color:var(--ink-500); margin-top:2px;">Post-meniscus-repair · 8 months with Emily</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:8px; margin-top:36px; align-items:center; padding-top:24px; border-top:1px solid var(--ink-100);">
+          <button class="t-dot" data-i="0" aria-label="Story 1" style="width:32px; height:10px; border-radius:999px; background:var(--coral-500); border:0; cursor:pointer; padding:0; transition: width .32s var(--ease-out), background .32s var(--ease-out);"></button>
+          <button class="t-dot" data-i="1" aria-label="Story 2" style="width:10px; height:10px; border-radius:999px; background:var(--ink-200); border:0; cursor:pointer; padding:0; transition: width .32s var(--ease-out), background .32s var(--ease-out);"></button>
+          <button class="t-dot" data-i="2" aria-label="Story 3" style="width:10px; height:10px; border-radius:999px; background:var(--ink-200); border:0; cursor:pointer; padding:0; transition: width .32s var(--ease-out), background .32s var(--ease-out);"></button>
+          <div style="flex:1;"></div>
+          <button id="t-prev" aria-label="Previous story" style="width:40px; height:40px; border-radius:999px; border:1px solid var(--ink-200); background:transparent; color:var(--plum-700); cursor:pointer; display:flex; align-items:center; justify-content:center;">←</button>
+          <button id="t-next" aria-label="Next story" style="width:40px; height:40px; border-radius:999px; border:0; background:var(--plum-700); color:var(--cream-50); cursor:pointer; display:flex; align-items:center; justify-content:center;">→</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section id="contact" class="em-section-tall" style="padding:120px 0; background:var(--cream-50); position:relative; overflow:hidden;">
+  <div aria-hidden="true" class="desert-sun" style="bottom:-160px; left:-60px; width:340px; height:340px; opacity:0.6;"></div>
+  <div class="container" style="position:relative;">
+    <div class="em-contact-grid">
+      <div>
+        <span class="eyebrow">Contact · let's talk</span>
+        <h2 style="margin-top:10px; font-size:clamp(40px, 4.6vw, 64px);">The first step is<br><em style="color:var(--plum-600); font-style:italic; font-weight:500;">a conversation.</em></h2>
+        <p style="margin-top:24px; font-size:18px; color:var(--ink-700); max-width:480px; line-height:1.65;">Book a free 20-minute call and tell me what's going on. I'll ask a lot of questions and tell you honestly whether I'm the right person to help.</p>
+        <div style="display:flex; flex-direction:column; gap:14px; margin-top:36px;">
+          <a href="https://calendly.com/emilythibodeau" class="btn btn-primary" style="justify-content:flex-start;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+            Book a free 20-min call via Calendly
+          </a>
+          <a href="https://wa.me/15551234567" class="btn btn-secondary" style="justify-content:flex-start;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22a10 10 0 1 0-8.7-5.1L2 22l5.2-1.4A10 10 0 0 0 12 22Z"/><path d="M9 9c.3-.5.7-.5 1-.5s.5.1.8.6l.9 1.9c.1.3.1.4 0 .7l-.4.5a.4.4 0 0 0-.1.5 6 6 0 0 0 2.9 2.9.4.4 0 0 0 .5-.1l.5-.4c.3-.1.4-.1.7 0l1.9.9c.5.3.5.5.5.8 0 .3-.1.7-.5 1-.4.4-1.2.7-2.3.7-2.5 0-5-1.5-6.2-2.7s-2.7-3.7-2.7-6.2c0-1.1.3-1.9.7-2.3Z"/></svg>
+            Message me on WhatsApp
+          </a>
+          <a href="https://instagram.com/emilythibodeaufitness" class="btn btn-secondary" style="justify-content:flex-start;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
+            Follow on Instagram
+          </a>
+        </div>
+
+        <div style="margin-top:44px; padding-top:28px; border-top:1px solid var(--ink-100); display:flex; gap:48px; flex-wrap:wrap;">
+          <div>
+            <div style="font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-500); font-weight:600; margin-bottom:6px;">Studio</div>
+            <div style="font-family:var(--font-display); font-style:italic; font-size:18px; color:var(--plum-700);">Palm Springs, CA</div>
+          </div>
+          <div>
+            <div style="font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-500); font-weight:600; margin-bottom:6px;">Hours</div>
+            <div style="font-family:var(--font-display); font-style:italic; font-size:18px; color:var(--plum-700);">Mon – Sat · 7a – 5p</div>
+          </div>
+        </div>
+      </div>
+
+      <form id="contact-form" class="em-contact-form" style="background:var(--bg-raised); border-radius:var(--r-lg); padding:40px 44px; box-shadow:var(--shadow-2); display:flex; flex-direction:column; gap:20px; border:1px solid var(--ink-100);">
+        <div>
+          <div style="font-family:var(--font-display); font-weight:600; font-size:26px; color:var(--ink-900); letter-spacing:-0.01em;">Or send me a note</div>
+          <div style="font-size:14px; color:var(--ink-500); margin-top:6px;">I reply within a day, usually the same morning.</div>
+        </div>
+        <div class="field"><label for="f-name">Your name</label><input id="f-name" required placeholder="First name"></div>
+        <div class="field"><label for="f-email">Email</label><input id="f-email" required type="email" placeholder="you@example.com"></div>
+        <div class="field"><label for="f-msg">What are you working on?</label><textarea id="f-msg" rows="4" placeholder="A bit about your goals, history, and what hurts."></textarea></div>
+        <button class="btn btn-primary" type="submit" style="justify-content:center; margin-top:4px;">Send note</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer style="background:var(--plum-800); color:var(--cream-100); padding:80px 0 32px; position:relative; overflow:hidden;">
+  <svg aria-hidden="true" viewBox="0 0 1440 80" preserveAspectRatio="none" style="position:absolute; top:0; left:0; right:0; width:100%; height:80px; pointer-events:none;">
+    <path d="M0,0 L0,50 L100,30 L200,44 L300,18 L420,36 L540,8 L660,28 L780,6 L900,24 L1020,10 L1140,30 L1260,12 L1380,32 L1440,20 L1440,0 Z" fill="var(--cream-50)"/>
+  </svg>
+
+  <div class="container" style="position:relative;">
+    <div class="em-footer-grid">
+      <div>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <svg width="28" height="28" viewBox="0 0 26 26" aria-hidden="true">
+            <circle cx="13" cy="13" r="6" fill="var(--coral-500)"/>
+            <line x1="22.5" y1="13" x2="25" y2="13" stroke="var(--coral-500)" stroke-width="1.4" stroke-linecap="round"/>
+            <line x1="21.23" y1="17.75" x2="23.39" y2="19" stroke="var(--coral-500)" stroke-width="1.4" stroke-linecap="round"/>
+            <line x1="17.75" y1="21.23" x2="19" y2="23.39" stroke="var(--coral-500)" stroke-width="1.4" stroke-linecap="round"/>
+            <line x1="13" y1="22.5" x2="13" y2="25" stroke="var(--coral-500)" stroke-width="1.4" stroke-linecap="round"/>
+            <line x1="8.25" y1="21.23" x2="7" y2="23.39" stroke="var(--coral-500)" stroke-width="1.4" stroke-linecap="round"/>
+            <line x1="4.77" y1="17.75" x2="2.61" y2="19" stroke="var(--coral-500)" stroke-width="1.4" stroke-linecap="round"/>
+            <line x1="3.5" y1="13" x2="1" y2="13" stroke="var(--coral-500)" stroke-width="1.4" stroke-linecap="round"/>
+            <line x1="4.77" y1="8.25" x2="2.61" y2="7" stroke="var(--coral-500)" stroke-width="1.4" stroke-linecap="round"/>
+            <line x1="8.25" y1="4.77" x2="7" y2="2.61" stroke="var(--coral-500)" stroke-width="1.4" stroke-linecap="round"/>
+            <line x1="13" y1="3.5" x2="13" y2="1" stroke="var(--coral-500)" stroke-width="1.4" stroke-linecap="round"/>
+            <line x1="17.75" y1="4.77" x2="19" y2="2.61" stroke="var(--coral-500)" stroke-width="1.4" stroke-linecap="round"/>
+            <line x1="21.23" y1="8.25" x2="23.39" y2="7" stroke="var(--coral-500)" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          <div style="font-family:var(--font-display); font-weight:600; font-size:30px; letter-spacing:-0.02em;">Emily <span style="font-style:italic; color:var(--butter-300); font-weight:500;">Thibodeau</span></div>
+        </div>
+        <div style="font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:var(--butter-300); margin-top:8px; font-weight:600; margin-left:40px;">Fitness + recovery · Palm Springs</div>
+        <p style="margin-top:24px; color:var(--cream-200); font-size:15px; max-width:380px; line-height:1.65;">Training for older adults, injury recovery, and anyone living with chronic pain. In-person in the studio and online worldwide.</p>
+      </div>
+      <div>
+        <div style="font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:var(--butter-300); margin-bottom:18px; font-weight:600;">Explore</div>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px;">
+          <li><a href="#services" style="color:var(--cream-100); text-decoration:none; font-size:15px;">Services</a></li>
+          <li><a href="#process" style="color:var(--cream-100); text-decoration:none; font-size:15px;">How we work</a></li>
+          <li><a href="#about" style="color:var(--cream-100); text-decoration:none; font-size:15px;">About</a></li>
+          <li><a href="#testimonials" style="color:var(--cream-100); text-decoration:none; font-size:15px;">Stories</a></li>
+          <li><a href="#contact" style="color:var(--cream-100); text-decoration:none; font-size:15px;">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:var(--butter-300); margin-bottom:18px; font-weight:600;">Reach out</div>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; font-size:15px;">
+          <li><a href="https://wa.me/15551234567" style="color:var(--cream-100); text-decoration:none;">WhatsApp · +1 (555) 123-4567</a></li>
+          <li><a href="mailto:emily@emilythibodeaufitness.com" style="color:var(--cream-100); text-decoration:none;">emily@emilythibodeaufitness.com</a></li>
+          <li><a href="https://instagram.com/emilythibodeaufitness" style="color:var(--cream-100); text-decoration:none;">Instagram</a></li>
+          <li><a href="https://calendly.com/emilythibodeau" style="color:var(--cream-100); text-decoration:none;">Book via Calendly</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="em-footer-bottom" style="border-top:1px solid rgba(251,246,239,0.14); padding-top:24px; display:flex; justify-content:space-between; font-size:13px; color:var(--cream-200); letter-spacing:0.04em;">
+      <div>© <span id="year"></span> Emily Thibodeau Fitness</div>
+      <div style="font-style:italic; font-family:var(--font-display);">Built under the desert sun</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav = document.getElementById('nav');
+  var onScroll = function(){
+    if (window.scrollY > 40) {
+      nav.style.background = 'rgba(245,236,222,0.9)';
+      nav.style.backdropFilter = 'blur(12px)';
+      nav.style.webkitBackdropFilter = 'blur(12px)';
+      nav.style.borderBottomColor = 'var(--ink-100)';
+    } else {
+      nav.style.background = 'transparent';
+      nav.style.backdropFilter = 'none';
+      nav.style.webkitBackdropFilter = 'none';
+      nav.style.borderBottomColor = 'transparent';
+    }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  var toggle = document.getElementById('nav-toggle');
+  var drawer = document.getElementById('nav-drawer');
+  var iconOpen = document.getElementById('nav-icon-open');
+  var iconClose = document.getElementById('nav-icon-close');
+  var setOpen = function(open){
+    drawer.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    iconOpen.style.display = open ? 'none' : 'block';
+    iconClose.style.display = open ? 'block' : 'none';
+    document.body.style.overflow = open ? 'hidden' : '';
+  };
+  toggle.addEventListener('click', function(){
+    setOpen(!drawer.classList.contains('open'));
+  });
+  drawer.querySelectorAll('[data-close]').forEach(function(a){
+    a.addEventListener('click', function(){ setOpen(false); });
+  });
+
+  var testimonials = [
+    { quote: "Emily is the first trainer who actually listened to me about my knee. Six months in and I'm back to hiking with my grandkids.", name: 'Marianne', context: 'Post-meniscus-repair · 8 months with Emily', initial: 'M' },
+    { quote: "I came to Emily terrified of re-injuring my back. She moved at exactly my pace and never once made me feel fragile. I feel stronger at 61 than I did at 45.", name: 'David', context: 'Chronic low-back pain · 2 years with Emily', initial: 'D' },
+    { quote: "After my shoulder surgery my PT discharged me and I had no idea what to do next. Emily bridged that gap. I'm back to swimming laps.", name: 'Priya', context: 'Post-rotator-cuff repair · 1 year with Emily', initial: 'P' }
+  ];
+  var tIdx = 0;
+  var elQuote = document.getElementById('t-quote');
+  var elName = document.getElementById('t-name');
+  var elCtx = document.getElementById('t-context');
+  var elInit = document.getElementById('t-initial');
+  var dots = document.querySelectorAll('.t-dot');
+  function renderT(i){
+    tIdx = (i + testimonials.length) % testimonials.length;
+    var t = testimonials[tIdx];
+    elQuote.textContent = t.quote;
+    elName.textContent = t.name;
+    elCtx.textContent = t.context;
+    elInit.textContent = t.initial;
+    dots.forEach(function(d, j){
+      d.style.width = j === tIdx ? '32px' : '10px';
+      d.style.background = j === tIdx ? 'var(--coral-500)' : 'var(--ink-200)';
+    });
+  }
+  dots.forEach(function(d){ d.addEventListener('click', function(){ renderT(parseInt(d.dataset.i, 10)); }); });
+  document.getElementById('t-prev').addEventListener('click', function(){ renderT(tIdx - 1); });
+  document.getElementById('t-next').addEventListener('click', function(){ renderT(tIdx + 1); });
+
+  var videoPlay = document.getElementById('video-play');
+  var videoCta = document.getElementById('video-cta');
+  var videoOverlay = document.getElementById('video-overlay');
+  var videoPoster = document.getElementById('video-poster');
+  var videoPlaceholder = document.getElementById('video-placeholder');
+  var videoClose = document.getElementById('video-close');
+  videoPlay.addEventListener('click', function(){
+    videoCta.style.display = 'none';
+    videoOverlay.style.display = 'none';
+    videoPoster.style.filter = 'none';
+    videoPlaceholder.style.display = 'flex';
+  });
+  videoClose.addEventListener('click', function(){
+    videoCta.style.display = 'flex';
+    videoOverlay.style.display = 'block';
+    videoPoster.style.filter = 'brightness(0.65) saturate(0.9) sepia(0.12)';
+    videoPlaceholder.style.display = 'none';
+  });
+
+  document.getElementById('contact-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert("Thanks! I'll get back to you within a day.");
+  });
+
+  document.querySelectorAll('.em-svc-card').forEach(function(card){
+    card.addEventListener('mouseenter', function(){
+      card.style.transform = 'translateY(-6px)';
+      card.style.boxShadow = 'var(--shadow-3)';
+    });
+    card.addEventListener('mouseleave', function(){
+      card.style.transform = '';
+      card.style.boxShadow = 'var(--shadow-2)';
+    });
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

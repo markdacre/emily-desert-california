@@ -1,0 +1,368 @@
+/* Desert / California Canyon theme
+ * Overrides the Emily Thibodeau base tokens with an earthy palette
+ * inspired by Joshua Tree, Palm Springs, canyon light.
+ *
+ * Fonts: Playfair Display (display) + Lato (body)
+ */
+
+:root {
+  /* ---------- COLOR (remapped) ---------- */
+
+  /* Terracotta — primary (was coral) */
+  --coral-50:  #FBEFE8;
+  --coral-100: #F4DCCC;
+  --coral-200: #E8B89A;
+  --coral-300: #DB9468;
+  --coral-400: #D17D4E;
+  --coral-500: #C6613F;   /* primary — canyon clay */
+  --coral-600: #A84E31;
+  --coral-700: #843C25;
+  --coral-800: #512518;
+
+  /* Terracotta aliases (semantic) */
+  --terracotta-500: #C6613F;
+  --terracotta-300: #DB9468;
+  --terracotta-600: #A84E31;
+
+  /* Deep clay — secondary (was plum) */
+  --plum-50:  #F5EAE2;
+  --plum-100: #EAD3C2;
+  --plum-200: #C99F85;
+  --plum-300: #9C6B50;
+  --plum-400: #7A4732;
+  --plum-500: #6B3829;
+  --plum-600: #5C2E21;   /* secondary — sunset rock */
+  --plum-700: #43201618;
+  --plum-700: #431E16;
+  --plum-800: #2C140E;
+
+  /* Sand / cream surfaces */
+  --cream-50:  #F5ECDE;  /* page bg — warm sand */
+  --cream-100: #EEE0CB;
+  --cream-200: #E3D1B5;
+
+  /* Ink — warm desert near-black */
+  --ink-50:  #EDE5D8;
+  --ink-100: #DBCFBA;    /* hairline */
+  --ink-200: #C2B49A;
+  --ink-300: #8E8068;
+  --ink-400: #695D49;
+  --ink-500: #48402F;
+  --ink-700: #322C21;
+  --ink-900: #2B2018;    /* body text — mesquite */
+
+  /* Sage — tertiary (was moss) */
+  --moss-50:  #ECEFE3;
+  --moss-300: #BCC7AA;
+  --moss-500: #9CA98A;   /* desert scrub */
+  --moss-700: #6F7C5E;
+
+  /* Sage semantic alias */
+  --sage-500: #9CA98A;
+  --sage-300: #BCC7AA;
+  --sage-700: #6F7C5E;
+
+  /* Ochre — testimonial / highlight (was butter) */
+  --butter-100: #F6E5C3;
+  --butter-300: #E2B974;
+  --butter-500: #D9A34E;
+
+  /* Semantic */
+  --fg-default: var(--ink-900);
+  --fg-muted:   var(--ink-500);
+  --fg-subtle:  var(--ink-400);
+  --fg-onDark:  var(--cream-50);
+  --fg-onCoral: var(--cream-50);
+  --fg-accent:  var(--coral-600);
+  --fg-link:    var(--plum-600);
+
+  --bg-page:    var(--cream-50);
+  --bg-raised:  #FBF5EA;
+  --bg-sunken:  var(--cream-100);
+  --bg-dark:    var(--plum-700);
+
+  --border-default: var(--ink-100);
+  --border-strong:  var(--ink-200);
+  --border-accent:  var(--coral-500);
+
+  --success: var(--moss-500);
+  --warning: var(--butter-500);
+  --danger:  var(--coral-700);
+
+  /* Desert gradient — dawn over the canyon */
+  --gradient-morning: linear-gradient(160deg, #F5ECDE 0%, #EFD8BE 45%, #E8B895 82%, #D4895F 100%);
+  --gradient-plum-dark: linear-gradient(180deg, #5C2E21 0%, #2C140E 100%);
+  --gradient-dusk: linear-gradient(180deg, #C6613F 0%, #843C25 60%, #431E16 100%);
+
+  /* ---------- TYPE (remapped) ---------- */
+  --font-display: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+  --font-body:    'Lato', -apple-system, 'Segoe UI', system-ui, sans-serif;
+
+  /* Shadow — warm clay-tinted */
+  --shadow-1: 0 1px 2px rgba(43, 32, 24, 0.08);
+  --shadow-2: 0 10px 28px -10px rgba(92, 46, 33, 0.22);
+  --shadow-3: 0 28px 56px -18px rgba(92, 46, 33, 0.32);
+  --shadow-focus: 0 0 0 2px var(--cream-50), 0 0 0 4px var(--coral-500);
+}
+
+/* Playfair has higher x-height than Fraunces — nudge display sizes slightly */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-variation-settings: normal;   /* Playfair isn't variable by opsz the same way */
+}
+h1 { font-weight: 600; letter-spacing: -0.02em; }
+h2 { font-weight: 600; letter-spacing: -0.015em; }
+h3 { font-weight: 600; letter-spacing: -0.01em; }
+h4 { font-weight: 600; }
+
+/* Lato body: a touch heavier at 400 than Inter */
+body { font-weight: 400; letter-spacing: 0.005em; }
+
+/* Eyebrow color shifts to terracotta */
+.eyebrow { color: var(--coral-600); letter-spacing: 0.22em; }
+
+/* Body link color — deep clay */
+a { color: var(--plum-600); }
+
+/* Buttons — slightly different radius feel (still pill) */
+.btn-primary { background: var(--coral-500); color: var(--cream-50); }
+.btn-primary:hover { background: var(--coral-600); }
+.btn-secondary {
+  background: transparent; color: var(--plum-600); border-color: var(--plum-600);
+}
+.btn-secondary:hover { background: var(--plum-50); }
+
+/* Desert texture utility: hand-drawn grain overlay (very subtle) */
+.grain {
+  position: relative;
+}
+.grain::after {
+  content: '';
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.4' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.22 0 0 0 0 0.15 0 0 0 0.35 0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.45'/></svg>");
+  opacity: 0.08;
+  mix-blend-mode: multiply;
+}
+
+/* Sun: used on hero */
+.desert-sun {
+  position: absolute;
+  border-radius: 999px;
+  background: radial-gradient(circle at 50% 50%,
+    rgba(255, 221, 168, 0.95) 0%,
+    rgba(234, 166, 102, 0.6) 40%,
+    rgba(198, 97, 63, 0) 72%);
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+/* Canyon ridge silhouette — reusable SVG mask */
+.canyon-ridge {
+  position: absolute; left: 0; right: 0; height: 80px;
+  background: var(--plum-700);
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 80' preserveAspectRatio='none'><path d='M0,80 L0,48 L40,52 L80,38 L130,44 L170,28 L220,36 L260,22 L320,32 L370,18 L420,30 L470,12 L520,26 L580,10 L640,24 L700,14 L760,30 L820,18 L880,34 L940,20 L1000,38 L1060,26 L1120,42 L1170,32 L1200,46 L1200,80 Z' fill='black'/></svg>");
+  mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 80' preserveAspectRatio='none'><path d='M0,80 L0,48 L40,52 L80,38 L130,44 L170,28 L220,36 L260,22 L320,32 L370,18 L420,30 L470,12 L520,26 L580,10 L640,24 L700,14 L760,30 L820,18 L880,34 L940,20 L1000,38 L1060,26 L1120,42 L1170,32 L1200,46 L1200,80 Z' fill='black'/></svg>");
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  pointer-events: none;
+}
+
+/* Saguaro-ish divider — repeating thin vertical marks */
+.mesa-divider {
+  height: 1px;
+  background: var(--ink-100);
+  position: relative;
+}
+.mesa-divider::before {
+  content: '';
+  position: absolute; left: 50%; top: -3px; transform: translateX(-50%);
+  width: 7px; height: 7px; border-radius: 999px;
+  background: var(--coral-500);
+}
+
+/* Photo duotone treatment — warms photography toward desert light */
+.photo-canyon {
+  filter: saturate(0.9) sepia(0.08) hue-rotate(-8deg) contrast(1.02);
+}
+
+/* ================================================================
+ * Base resets + media safety
+ * ============================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { overflow-x: hidden; }
+img, svg, video { max-width: 100%; }
+
+/* Keep subject heads in frame when object-fit: cover crops */
+.em-hero-photo img,
+.em-about-photo img,
+.em-process-photo img,
+.em-svc-photo img {
+  object-position: center top;
+}
+
+/* ================================================================
+ * Layout grids (desktop defaults)
+ * ============================================================== */
+.em-hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 72px; align-items: center; }
+.em-hero-stats { display: flex; gap: 40px; margin-top: 48px; align-items: flex-start; }
+.em-svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.em-process-step { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; position: relative; }
+.em-about-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 80px; align-items: center; }
+.em-test-grid { display: grid; grid-template-columns: 0.45fr 1fr; gap: 72px; align-items: center; }
+.em-contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: flex-start; }
+.em-footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 56px; margin-bottom: 56px; }
+
+/* ================================================================
+ * Tablet: 3-col services drop to 2-col; footer to 2-col
+ * ============================================================== */
+@media (max-width: 1024px) {
+  .em-svc-grid { grid-template-columns: repeat(2, 1fr); }
+  .em-footer-grid { grid-template-columns: 1.4fr 1fr; }
+  .em-footer-grid > :nth-child(3) { grid-column: 1 / -1; }
+}
+
+/* ================================================================
+ * Mobile: everything collapses to single column
+ * ============================================================== */
+@media (max-width: 900px) {
+  .em-hero-grid,
+  .em-svc-grid,
+  .em-process-step,
+  .em-about-grid,
+  .em-test-grid,
+  .em-contact-grid,
+  .em-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .em-process-step { direction: ltr !important; padding-left: 0 !important; padding-right: 0 !important; }
+  .em-process-step > div { direction: ltr; padding-left: 0 !important; padding-right: 0 !important; }
+  .em-process-num-pill { display: none !important; }
+  .em-process-connector { display: none !important; }
+  .em-footer-grid > :nth-child(3) { grid-column: auto; }
+
+  .em-hero-stats { gap: 24px; flex-wrap: wrap; margin-top: 36px; }
+  .em-hero-stats > div { padding-left: 0 !important; border-left: 0 !important; }
+
+  .em-section-tall { padding: 80px 0 !important; }
+  .em-section { padding: 72px 0 !important; }
+  .em-hero { padding-bottom: 96px !important; }
+
+  .em-hero-photo img,
+  .em-about-photo img { height: 440px !important; }
+  .em-process-photo img { height: 320px !important; }
+  .em-svc-photo { height: 200px !important; }
+
+  .em-test-card { padding: 40px 36px !important; }
+  .em-test-card blockquote { font-size: 22px !important; }
+  .em-contact-form { padding: 28px 24px !important; }
+}
+
+@media (max-width: 600px) {
+  .em-section,
+  .em-section-tall { padding: 56px 0 !important; }
+  .em-hero { padding-bottom: 72px !important; }
+
+  .em-hero h1 { font-size: clamp(40px, 11vw, 60px) !important; }
+  .em-hero-sub { font-size: 17px !important; margin-top: 20px !important; }
+
+  .em-hero-stats { gap: 20px 28px; }
+
+  .em-hero-photo img,
+  .em-about-photo img { height: 360px !important; }
+  .em-process-photo img { height: 240px !important; }
+  .em-svc-photo { height: 180px !important; }
+
+  .em-hero-quote {
+    position: static !important;
+    margin: 16px 0 0 !important;
+    max-width: 100% !important;
+    transform: none !important;
+  }
+  .em-hero-sticker {
+    top: 8px !important;
+    right: 8px !important;
+  }
+  .em-hero-ring,
+  .em-hero-dots { display: none !important; }
+
+  .em-process-title { font-size: 30px !important; }
+
+  .em-test-card { padding: 28px 22px !important; }
+  .em-test-card blockquote { font-size: 19px !important; line-height: 1.4 !important; }
+  .em-test-qmark { font-size: 120px !important; right: 16px !important; top: 8px !important; }
+
+  .em-video-btn { width: 72px !important; height: 72px !important; }
+  .em-video-btn svg { width: 22px !important; height: 22px !important; }
+  .em-video-title { font-size: 22px !important; }
+
+  .em-footer-bottom {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+}
+
+/* ================================================================
+ * Mobile nav — hamburger + drawer
+ * ============================================================== */
+.em-nav-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--ink-200);
+  border-radius: 999px;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-900);
+  padding: 0;
+}
+.em-nav-toggle:focus-visible { outline: 2px solid var(--coral-500); outline-offset: 2px; }
+.em-nav-toggle svg { display: block; }
+
+.em-nav-drawer {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 72px;
+  background: var(--cream-50);
+  border-top: 1px solid var(--ink-100);
+  border-bottom: 1px solid var(--ink-100);
+  padding: 20px var(--gutter-mobile) 28px;
+  z-index: 49;
+  box-shadow: var(--shadow-2);
+}
+.em-nav-drawer.open { display: block; }
+.em-nav-drawer nav {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: stretch;
+}
+.em-nav-drawer nav a {
+  color: var(--ink-900);
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--ink-100);
+}
+.em-nav-drawer nav a:last-child { border-bottom: 0; }
+.em-nav-drawer nav a.btn { border-bottom: 0; text-align: center; justify-content: center; margin-top: 8px; }
+
+@media (max-width: 900px) {
+  .em-nav-desktop { display: none !important; }
+  .em-nav-toggle { display: inline-flex; }
+}
+@media (min-width: 901px) {
+  .em-nav-drawer { display: none !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
